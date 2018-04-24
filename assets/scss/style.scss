@@ -1,0 +1,269 @@
+@import "icons/_iconfont__variables";
+@import "icons/_iconfont__icons";
+@import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Oswald');
+$time: .3s;
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Oswald', sans-serif;
+}
+input,
+textarea {
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px black;
+    transition: $time;
+    resize: none;
+}
+.icon{
+    font-size: 0px;
+    color: #61b3de;
+    position: absolute;
+    left: 10px;
+    bottom: 0px;
+    transition: $time;
+    
+    &--call{
+        bottom: -4px;
+    }
+    &--sent-mail{
+        bottom: -10px;
+    }
+}
+.title{
+    &--contact-form{
+        position: absolute;
+        top: 0;
+        font-size: 20px;
+    }
+}
+.button{
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: $time;
+    &--send{
+        background-color: #666;
+        color: #fff;
+        align-self: center;
+        padding: 5px 20px;
+        font-size: 24px;
+        border: none;
+        letter-spacing: 1px;
+        z-index: 0;
+        overflow: hidden;
+        font-weight: bold;
+        margin-top: 20px;
+        &:before{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 100%;
+            background-color: #fff;
+            left: 50%;
+            top: 0;
+            z-index: -1;
+            transform: translate(-50%) skewX(45deg);
+            transition: $time;
+        }
+        &:hover{
+            color: black;
+            &:before{
+                width: 100%;
+            }
+        }
+        &:active{
+            color: black;
+            &:before{
+                width: 140%;
+            }
+        }
+    }
+}
+.label{
+    position: relative;
+    &--services{
+        width: 40%;
+        cursor: pointer;
+        height: 26px;
+    }
+    &--contacts{
+        margin-bottom: 10px;
+    }
+    &--textarea{
+        width: 100%;
+    }
+    &__text{
+        font-size: 18px;
+    }
+}
+.form{
+    &--contact{
+        display: flex;
+        flex-direction: column;
+        max-width: 600px;
+        border: 2px solid black;
+        margin: 50px auto;
+        padding: 15px;
+        
+        .row{
+            display: flex;
+            justify-content: space-between;
+            
+            .contacts{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                
+                input{
+                    padding: 5px 10px;
+                    font-size: 18px;
+                    backface-visibility: hidden;
+                    &:focus{
+                        box-shadow: none;
+                        padding-left: 40px;
+                         & ~ .icon{
+                            font-size: 26px;
+                            
+                             &--call{
+                                 font-size: 30px;
+                             }
+                             &--sent-mail{
+                                 font-size: 50px;
+                                 bottom: -22px;
+                             }
+                        }
+                        & + .focus-border:before, & + .focus-border:after{
+                            content: "";
+                            position: absolute;
+                            height: 2px;
+                            background-color: #61b3de;
+                        }
+                        & + .focus-border:before{
+                            top: 24px;
+                            animation: .2s top_border_focus forwards;
+                            
+                            @keyframes top_border_focus{
+                                from{
+                                    width: 0;
+                                }
+                                to{
+                                    width: 100%;
+                                    transition: $time;
+                                }
+                            }
+                        }
+                        & + .focus-border:after{
+                            right: 0;
+                            animation: .2s bottom_border_focus .4s forwards;
+                            
+                            @keyframes bottom_border_focus{
+                                from{
+                                    width: 0;
+                                }
+                                to{
+                                    width: 100%;
+                                }
+                            }
+                        }
+                        & + .focus-border i:before, & + .focus-border i:after{
+                            content: "";
+                            position: absolute;
+                            background-color: #61b3de;
+                            width: 2px;
+                            z-index: 1;
+                        }
+                        & + .focus-border i:after{
+                            right: 0;
+                            top: 26px;
+                            animation: .2s right_border_focus .2s forwards;
+                            
+                            @keyframes right_border_focus{
+                                from{
+                                    height: 0;
+                                }
+                                to{
+                                    height: 32px;
+                                }
+                            }
+                        }
+                        & + .focus-border i:before{
+                            left: 0;
+                            bottom: 0;
+                            animation: .2s left_border_focus .6s forwards;
+
+                            @keyframes left_border_focus{
+                                from{
+                                    height: 0;
+                                }
+                                to{
+                                    height: 32px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .services{
+                width: 50%;
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+                padding-top: 50px;
+                justify-content: space-between;
+                
+                [type="checkbox"]{
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translateY(-50%) rotate(45deg);
+                    appearance: none;
+                    width: 16px;
+                    height: 16px;
+                    border: 1px solid black;
+                    transition: $time;
+                    cursor: pointer;
+                    
+                    &:checked{
+                        transform: translateY(-50%) rotate(360deg);
+                        &:before{
+                            content: "\2713";
+                            position: absolute;
+                            font-weight: bold;
+                            font-size: 18px;
+                            top: -6px;
+                            opacity: 0;
+                            animation: 1s checkmark .3s forwards;
+                            
+                            @keyframes checkmark{
+                                0{
+                                    transform: scale(1);
+                                    opacity: 0;
+                                }
+                                50%{
+                                    transform: scale(1.6);
+                                    opacity: 1;
+                                }
+                                100%{
+                                    transform: scale(1);
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .textarea{
+            width: 100%;
+            padding: 5px 10px;
+            font-size: 18px;
+            &:focus{
+                box-shadow: 0 0 2px 2px #61b3de;
+            }
+        }
+    }
+}

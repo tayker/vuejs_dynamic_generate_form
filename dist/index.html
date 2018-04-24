@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div id="app">
+            <smb-form inline-template :multiples="['checkboxes']">
+                <form action="https:\\google.com" class="form form--contact">
+                    <div class="row">
+                        <div class="contacts">
+                            <label class="label label--contacts">
+                                <div class="label__text">
+                                    Name
+                                </div>
+                                <input type="text" name="name" placeholder="Emily" required v-model="data.name">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                                <span class="icon icon--arm-up"></span>
+                            </label>
+                            <label class="label label--contacts">
+                                <div class="label__text">
+                                    Email
+                                </div>
+                                <input type="text" name="email" placeholder="emily007@gmail.com"
+                                v-model="data.email" required>
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                                <span class="icon icon--sent-mail"></span>
+                            </label>
+                            <label class="label label--contacts">
+                                <div class="label__text">
+                                    Phone
+                                </div>
+                                <input type="text" name="phone" placeholder="0662345566"
+                                v-model="data.phone" required>
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                                <span class="icon icon--call"></span>
+                            </label>
+                        </div>
+                        <div class="services">
+                           <div class="title title--contact-form">
+                               Choose a service
+                           </div>
+                            <label class="label label--services">
+                                <span class="label__text">
+                                    Landing page
+                                </span>
+                                <input type="checkbox" value="landing" 
+                                v-model="data.checkboxes">
+                            </label>
+                            <label class="label label--services">
+                                <span class="label__text">
+                                    SPA
+                                </span>
+                                <input type="checkbox" value="single page"
+                                v-model="data.checkboxes">
+                            </label>
+                            <label class="label label--services">
+                                <span class="label__text">
+                                    Double page
+                                </span>
+                                <input type="checkbox" value="double page"
+                                v-model="data.checkboxes">
+                            </label>
+                            <label class="label label--services">
+                                <span class="label__text">
+                                    tripple page
+                                </span>
+                                <input type="checkbox" value="tripple page"
+                                v-model="data.checkboxes">
+                            </label>
+                            <label class="label label--services">
+                                <span class="label__text">
+                                    Another
+                                </span>
+                                <input type="checkbox" value="another"
+                                v-model="data.checkboxes">
+                            </label>
+                        </div>
+                    </div>
+                    <label class="label label--textarea">
+                        <div class="label__text">
+                            Message
+                        </div>
+                        <textarea name="" id="" cols="30" rows="10" class="textarea" v-model="data.message"></textarea>
+                        <span class="focus-border">
+                            <i></i>
+                        </span>
+                    </label>
+                    <button class="button button--send"
+                       @click.prevent="submit">
+                        Submit
+                    </button>
+                </form>
+            </smb-form>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
+    <script src="script/script.js"></script>
+</html>

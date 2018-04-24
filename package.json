@@ -1,0 +1,31 @@
+{
+  "name": "bigDeal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-consolidate": "^0.2.0",
+    "gulp-iconfont": "^9.0.2",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-vueify": "0.0.3",
+    "lodash": "^4.17.4",
+    "node-normalize-scss": "^3.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "check": "^1.0.0",
+    "g": "^2.0.1",
+    "npm": "^5.8.0",
+    "rellax": "^1.5.0",
+    "updates": "^2.4.1"
+  }
+}
